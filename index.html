@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>राजभोग स्थान • Raajbhog Sthaan | Royal Heritage Indian Cuisine</title>
+    <title>राजभोग स्थान • Raajbhog Sthaan | Royal Indian & Chinese Gastronomy</title>
     
-    <meta name="description" content="Experience authentic imperial Indian delicacies curated from royal havelis, nawabi kitchens, and temple feasts across India.">
+    <meta name="description" content="Experience authentic imperial Indian & Chinese delicacies curated from royal havelis, nawabi kitchens, and imperial wok masters.">
     <meta name="theme-color" content="#4F0E1A">
 
     <!-- Google Fonts -->
@@ -20,8 +20,8 @@
 
     <!-- TOP ANNOUNCEMENT BAR -->
     <div class="announcement-bar">
-        <span>👑 <span class="gold-accent">Purveyors of Imperial Gastronomy</span> — Heritage recipes prepared in pure Desi Ghee & saffron</span>
-        <span>• Complimentary royal copper packaging on all orders above ₹299 •</span>
+        <span>👑 <span class="gold-accent">Purveyors of Imperial Gastronomy</span> — Authentic Indian Heritage & Wok-Tossed Indo-Chinese Specials</span>
+        <span>• Complimentary royal packaging on all orders above ₹299 •</span>
     </div>
 
     <!-- MAIN NAVIGATION -->
@@ -33,7 +33,7 @@
                 </div>
                 <div class="brand-text">
                     <span class="brand-title">RAAJBHOG <span>STHAAN</span></span>
-                    <span class="brand-subtitle">राजभोग स्थान • Royal Indian Cuisine</span>
+                    <span class="brand-subtitle">राजभोग स्थान • Royal Indian & Chinese Cuisine</span>
                 </div>
             </a>
 
@@ -41,8 +41,8 @@
                 <ul class="nav-links">
                     <li><a href="#" class="active">Imperial Court</a></li>
                     <li><a href="#menu">Royal Menu</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterRegion('Chinese Specials'); scrollToMenu();">🥢 Chinese Specials</a></li>
                     <li><a href="#heritage">The Heritage</a></li>
-                    <li><a href="#specials">Shahi Thalis</a></li>
                 </ul>
             </nav>
 
@@ -67,38 +67,41 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-royal-crest">
-                <span>✦ Imperial Flavors Since 1742 ✦</span>
+                <span>✦ Imperial Flavors & Wok Artistry ✦</span>
             </div>
             <h1>
-                A Culinary Odyssey Across the <br>
-                <span class="gold-gradient-text">Royal Kitchens of India</span>
+                A Grand Feast Across the <br>
+                <span class="gold-gradient-text">Royal Kitchens & Woks of the Orient</span>
             </h1>
             <p>
-                From the slow-simmered dum pukht cauldrons of Awadh to the ghee-rich earthen ovens of Mewar, 
-                immerse yourself in 40 meticulously curated imperial recipes passed down through generations of master Khansamas.
+                From the slow-simmered dum pukht cauldrons of Awadh to the fiery sizzling woks of authentic Hakka & Schezwan kitchens, 
+                immerse yourself in 54 hand-curated delicacies prepared with authentic ingredients and century-old traditions.
             </p>
             <div class="hero-actions">
                 <button class="btn-primary" onclick="scrollToMenu()">
-                    <span>Explore Royal Menu</span>
+                    <span>Explore Grand Menu</span>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
                 </button>
+                <button class="btn-secondary" onclick="filterRegion('Chinese Specials'); scrollToMenu();">
+                    <span>🥢 Sizzling Chinese Menu</span>
+                </button>
                 <button class="btn-secondary" onclick="filterRegion('Royal Specials'); scrollToMenu();">
-                    <span>👑 Experience Grand Thalis</span>
+                    <span>👑 Grand Shahi Thalis</span>
                 </button>
             </div>
 
             <div class="hero-stats">
                 <div class="stat-box">
-                    <div class="stat-number">40</div>
-                    <div class="stat-label">Royal Delicacies</div>
+                    <div class="stat-number">54+</div>
+                    <div class="stat-label">Handcrafted Dishes</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">18+</div>
-                    <div class="stat-label">States Represented</div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Cuisine Provinces</div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-number">100%</div>
-                    <div class="stat-label">Desi Ghee & Spices</div>
+                    <div class="stat-label">Fresh & Authentic</div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-number">4.9★</div>
@@ -121,7 +124,7 @@
                 <span class="line"></span>
             </div>
             <p class="section-desc">
-                Select your province or search for revered royal specialities crafted with heritage stone-ground spices.
+                Select your province or search for revered royal Indian curries, kebabs, thalis, and wok-seared Chinese favourites.
             </p>
         </div>
 
@@ -135,7 +138,7 @@
                     <input 
                         type="text" 
                         id="searchInput" 
-                        placeholder="Search royal delicacies, states, flavours... (e.g. Biryani, Kachori, Thali)" 
+                        placeholder="Search delicacies, noodles, biryani, manchurian, thali... (e.g. Hakka Noodles, Butter Chicken)" 
                         oninput="searchFood()"
                     >
                     <button class="clear-search-btn" onclick="clearSearch()" title="Clear search">&times;</button>
@@ -153,7 +156,7 @@
                     <div class="sort-group">
                         <label for="sortSelect">Sort:</label>
                         <select id="sortSelect" class="sort-select" onchange="sortFoodsBy(this.value)">
-                            <option value="featured">Royal Curated</option>
+                            <option value="featured">Curated Special</option>
                             <option value="rating">Highest Rated (★)</option>
                             <option value="price-asc">Price: Low to High</option>
                             <option value="price-desc">Price: High to Low</option>
@@ -164,7 +167,8 @@
 
             <!-- Regional Filter Tabs -->
             <div class="regions-scroll-wrapper">
-                <button class="region active" onclick="filterRegion('All')">All Regions</button>
+                <button class="region active" onclick="filterRegion('All')">All Delicacies</button>
+                <button class="region" onclick="filterRegion('Chinese Specials')">🥢 Chinese Specials</button>
                 <button class="region" onclick="filterRegion('North India')">North India</button>
                 <button class="region" onclick="filterRegion('West India')">West India</button>
                 <button class="region" onclick="filterRegion('South India')">South India</button>
@@ -175,8 +179,8 @@
 
             <!-- Meta info bar -->
             <div class="results-meta-bar">
-                <span>Curated selection from 7 provinces</span>
-                <span id="foodCountIndicator" class="results-count">40 Imperial Delicacies</span>
+                <span>Curated selection across 8 culinary traditions</span>
+                <span id="foodCountIndicator" class="results-count">54 Delicacies Available</span>
             </div>
         </div>
 
@@ -190,14 +194,14 @@
     <!-- ROYAL HERITAGE STORY SECTION -->
     <section class="heritage-section" id="heritage">
         <div class="section-header">
-            <span class="section-pretitle">Centuries of Excellence</span>
+            <span class="section-pretitle">Culinary Mastery</span>
             <h2 class="section-title">The Royal Pillars of Raajbhog Sthaan</h2>
             <div class="section-divider">
                 <span class="line"></span>
                 <span class="emblem">🦚</span>
                 <span class="line"></span>
             </div>
-            <p class="section-desc">Every dish is an homage to authentic culinary dynasties, prepared strictly in traditional earthenware and brass cauldrons.</p>
+            <p class="section-desc">Every dish is an homage to authentic culinary dynasties, prepared strictly with genuine heritage recipes and freshest farm ingredients.</p>
         </div>
 
         <div class="heritage-grid">
@@ -207,14 +211,14 @@
                 <p>Preserving the art of slow-steaming inside hand-sealed clay handis, sealing juices, aromas, and botanical essences.</p>
             </div>
             <div class="heritage-card">
-                <div class="heritage-icon">🌾</div>
-                <h4>Shahi Khansama Secrets</h4>
-                <p>Authentic recipes inherited from lineage chefs of Mewar, Awadh, Hyderabad, and Bengal royal durbars.</p>
+                <div class="heritage-icon">🥢</div>
+                <h4>High-Flame Wok Breath (Wok Hei)</h4>
+                <p>Mastering sizzling carbon-steel woks for authentic smokiness, crispy textures, and rich glossy sauces in every Indo-Chinese dish.</p>
             </div>
             <div class="heritage-card">
                 <div class="heritage-icon">🌿</div>
                 <h4>Pure A2 Ghee & Saffron</h4>
-                <p>Infused only with handpicked Kashmiri saffron, stone-ground garam masalas, and clarified churned bilona ghee.</p>
+                <p>Infused only with handpicked Kashmiri saffron, stone-ground garam masalas, and clarified churned bilona cow ghee.</p>
             </div>
         </div>
     </section>
@@ -225,7 +229,7 @@
             <div class="modal-header">
                 <div class="modal-title-wrap">
                     <span>👑</span>
-                    <h3 id="cartTitle">Your Royal Feast</h3>
+                    <h3 id="cartTitle">Your Grand Feast</h3>
                 </div>
                 <button class="modal-close-btn" onclick="closeCart()" aria-label="Close cart">&times;</button>
             </div>
@@ -237,7 +241,7 @@
 
             <div class="modal-footer">
                 <button id="checkoutBtn" class="btn-checkout" onclick="checkout()">
-                    <span>Proceed to Royal Checkout</span>
+                    <span>Proceed to Checkout</span>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
             </div>
@@ -250,7 +254,7 @@
             <div class="modal-header">
                 <div class="modal-title-wrap">
                     <span>⚜️</span>
-                    <h3 id="loginTitle">Royal Guest Portal</h3>
+                    <h3 id="loginTitle">Guest Portal</h3>
                 </div>
                 <button class="modal-close-btn" onclick="closeLogin()" aria-label="Close login">&times;</button>
             </div>
@@ -258,24 +262,24 @@
             <div class="modal-body">
                 <div class="auth-form">
                     <p style="font-size: 0.9rem; color: var(--text-secondary); text-align: center; margin-bottom: 8px;">
-                        Sign in to access your royal order history, thali customizations, and imperial rewards.
+                        Sign in to access your order history, thali customizations, and imperial rewards.
                     </p>
 
                     <div id="loginMessage" class="auth-message" style="display: none;"></div>
 
                     <div class="auth-form-group">
-                        <label for="userName">Royal Name</label>
+                        <label for="userName">Full Name</label>
                         <div class="input-with-icon">
                             <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                            <input type="text" id="userName" placeholder="e.g. Maharaja Vikramaditya">
+                            <input type="text" id="userName" placeholder="e.g. Vikramaditya Sharma">
                         </div>
                     </div>
 
                     <div class="auth-form-group">
-                        <label for="userEmail">Royal Dispatch Email</label>
+                        <label for="userEmail">Email Address</label>
                         <div class="input-with-icon">
                             <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                            <input type="email" id="userEmail" placeholder="e.g. majesty@raajbhog.in">
+                            <input type="email" id="userEmail" placeholder="e.g. vikram@raajbhog.in">
                         </div>
                     </div>
 
@@ -299,16 +303,17 @@
             <div class="footer-col-brand">
                 <div class="brand-title">राजभोग स्थान • RAAJBHOG STHAAN</div>
                 <p class="footer-desc">
-                    An imperial culinary sanctuary honouring the living culinary heritage of India. Hand-crafted daily using stone-pressed oils, pure churned butter, and fragrant whole botanicals.
+                    An imperial culinary sanctuary honouring the living culinary heritage of India and the Orient. Hand-crafted daily using stone-pressed oils, pure churned butter, and fragrant whole botanicals.
                 </p>
                 <div style="font-size: 1.2rem; display: flex; gap: 14px; color: var(--royal-gold);">
-                    <span>🦚</span><span>👑</span><span>🏺</span><span>⚜️</span>
+                    <span>🦚</span><span>👑</span><span>🏺</span><span>🥢</span><span>⚜️</span>
                 </div>
             </div>
 
             <div class="footer-col">
                 <h5>Cuisine Provinces</h5>
                 <ul class="footer-links">
+                    <li><a href="javascript:void(0)" onclick="filterRegion('Chinese Specials'); scrollToMenu();">🥢 Chinese & Indo-Chinese</a></li>
                     <li><a href="javascript:void(0)" onclick="filterRegion('North India'); scrollToMenu();">North India (Awadh & Punjab)</a></li>
                     <li><a href="javascript:void(0)" onclick="filterRegion('West India'); scrollToMenu();">West India (Rajasthan & Gujarat)</a></li>
                     <li><a href="javascript:void(0)" onclick="filterRegion('South India'); scrollToMenu();">South India (Nizam & Malabar)</a></li>
@@ -318,30 +323,28 @@
             </div>
 
             <div class="footer-col">
-                <h5>Sanctuary</h5>
+                <h5>Quick Access</h5>
                 <ul class="footer-links">
                     <li><a href="#heritage">The Heritage Story</a></li>
-                    <li><a href="javascript:void(0)" onclick="openCart()">Review Your Thali</a></li>
+                    <li><a href="javascript:void(0)" onclick="openCart()">Review Your Order</a></li>
                     <li><a href="javascript:void(0)" onclick="openLogin()">Royal Guest Club</a></li>
-                    <li><a href="javascript:void(0)">Imperial Catering</a></li>
+                    <li><a href="javascript:void(0)">Party & Catering Orders</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h5>Royal Hours & Dispatch</h5>
+                <h5>Hours & Orders</h5>
                 <div class="footer-contact-info">
-                    <p><strong>Bhojnalaya Hours:</strong> 9:30 AM – 11:30 PM Daily</p>
-                    <p><strong>Shahi Concierge:</strong> +91 7678451382 </p>
-                    <p><strong>Imperial Enquiries:</strong> sharma's@raajbhog.in</p>
+                    <p><strong>Kitchen Hours:</strong> 11:30 AM – 11:30 PM Daily</p>
+                    <p><strong>Concierge:</strong> +91 1800 722 524</p>
+                    <p><strong>Enquiries:</strong> dastarkhan@raajbhog.in</p>
                 </div>
             </div>
         </div>
 
         <div class="footer-bottom">
             <span>© 2026 Raajbhog Sthaan (राजभोग स्थान). All Imperial Rights Reserved.</span>
-            <span>This website is made by NITIN 
-                           only for personal use
-            </span>
+            <span>Handcrafted with devotion for authentic Indian & Oriental culinary artistry.</span>
         </div>
     </footer>
 
